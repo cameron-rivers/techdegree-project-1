@@ -18,13 +18,13 @@ let quotes = [
   },
   {
     quote: "It's Not Who I Am Underneath, But What I Do That Defines Me.",
-    source: 'Batman'
-    year: 2005
+    source: 'Batman',
+    year: '2005'
 
   },
   {
     quote: 'With Great Power, Comes Great Responsibility.',
-    source: 'Uncle Ben'
+    source: 'Uncle Ben',
     citation: 'Spider-Man'
   },
   {
@@ -55,19 +55,29 @@ function getRandomQuote (array) {
 ***/
 function printQuote (array) {
   let randomQuote = getRandomQuote(array);
-  //console.log(quote);
-  //document.querySelector(".quote").innerHTML = randomQuote.quote;
+  console.log(randomQuote);
+  //console.log(randomQuote.quote);
+  //console.log(randomQuote.source);
+  //console.log(randomQuote.citation);
+  //console.log(randomQuote.year);
 
   let printedQuote = `
-  <p class="quote">${randomQuote.quote}</p>
-  <p class="source">${randomQuote.source}
+  <p class="quote">${randomQuote['quote']}</p>
+  <p class="source">${randomQuote['source']}
   `;
 
-  if ()
-//second <p> tag is left out per the instructions
+  if (randomQuote.citation) {
+    printedQuote += `<span class="citation">${randomQuote['citation']}</span>`;
+  }
+  
+  if (randomQuote.year) {
+    printedQuote += `<span class="citation">${randomQuote['year']}</span>`;
+  }
 
+  printedQuote += "</p>"
 
-
+  console.log(printedQuote);
+  document.getElementById('quote-box').innerHTML = printedQuote;
 
 }
 
