@@ -13,24 +13,27 @@ project 1 - A Random Quote Generator
 
 let quotes = [
   {
-    quote: "The truth is like the sun. You can shut it out for a time, but it ain't goin' away.",
-    source: 'Elvis Presley'
+    quote: "You Either Die A Hero Or Live Long Enough To See Yourself Become The Villain.",
+    source: 'Harvey Dent'
   },
   {
-    quote: 'The beautiful thing about learning is that nobody can take it away from you.',
-    source: 'BB King'
+    quote: "It's Not Who I Am Underneath, But What I Do That Defines Me.",
+    source: 'Batman'
+    year: 2005
+
   },
   {
-    quote: 'One good thing about music, when it hits you, you feel no pain.',
-    source: 'Bob Marley'
+    quote: 'With Great Power, Comes Great Responsibility.',
+    source: 'Uncle Ben'
+    citation: 'Spider-Man'
   },
   {
-    quote: "Life is what happens when you’re making other plans.",
-    source: 'John Lennon',
+    quote: "You are much stronger than you think you are.",
+    source: 'Superman',
   },
   {
-    quote: 'Just as Jesus created wine from water, we humans are capable of transmuting emotion into music.',
-    source: 'Carlos Santana',
+    quote: 'If you are good at something, never do it for free.',
+    source: 'The Joker',
   },
 ];
 
@@ -53,8 +56,19 @@ function getRandomQuote (array) {
 function printQuote (array) {
   let randomQuote = getRandomQuote(array);
   //console.log(quote);
-  let printedQuote = document.querySelector(".quote");
-  printedQuote.innerHTML = randomQuote.quote;
+  //document.querySelector(".quote").innerHTML = randomQuote.quote;
+
+  let printedQuote = `
+  <p class="quote">${randomQuote.quote}</p>
+  <p class="source">${randomQuote.source}
+  `;
+
+  if ()
+//second <p> tag is left out per the instructions
+
+
+
+
 }
 
 printQuote(quotes);
