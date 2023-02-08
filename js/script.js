@@ -53,9 +53,9 @@ function getRandomQuote (array) {
 /***
  * `printQuote` function
 ***/
-function printQuote (array) {
-  let randomQuote = getRandomQuote(array);
-  console.log(randomQuote);
+function printQuote () {
+  let randomQuote = getRandomQuote(quotes);
+  //console.log(randomQuote);
   //console.log(randomQuote.quote);
   //console.log(randomQuote.source);
   //console.log(randomQuote.citation);
@@ -81,7 +81,7 @@ function printQuote (array) {
 
 }
 
-printQuote(quotes);
+//printQuote(quotes);
 
 
 /***
