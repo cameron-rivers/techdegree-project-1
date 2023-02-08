@@ -71,7 +71,7 @@ function printQuote (array) {
   }
   
   if (randomQuote.year) {
-    printedQuote += `<span class="citation">${randomQuote['year']}</span>`;
+    printedQuote += `<span class="year">${randomQuote['year']}</span>`;
   }
 
   printedQuote += "</p>"
