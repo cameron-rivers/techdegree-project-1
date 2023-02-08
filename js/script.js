@@ -50,7 +50,14 @@ function getRandomQuote (array) {
 /***
  * `printQuote` function
 ***/
+function printQuote (array) {
+  let randomQuote = getRandomQuote(array);
+  //console.log(quote);
+  let printedQuote = document.querySelector(".quote");
+  printedQuote.innerHTML = randomQuote.quote;
+}
 
+printQuote(quotes);
 
 
 /***
