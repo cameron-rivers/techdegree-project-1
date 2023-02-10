@@ -26,7 +26,8 @@ let quotes = [
   {
     quote: 'With Great Power, Comes Great Responsibility.',
     source: 'Uncle Ben',
-    citation: 'Spider-Man'
+    citation: 'Spider-Man',
+    tags: 'Marvel'
   },
   {
     quote: "You are much stronger than you think you are.",
@@ -73,6 +74,10 @@ function printQuote () {
   
   if (randomQuote.year) {
     printedQuote += `<span class="year">${randomQuote['year']}</span>`;
+  }
+
+  if (randomQuote.tags) {
+    printedQuote += `<span class="year">${randomQuote['tags']}</span>`;
   }
 
   printedQuote += "</p>"
