@@ -9,6 +9,7 @@ project 1 - A Random Quote Generator
 
 /*** 
  * `quotes` array 
+ * each array item is an object containing individual quotes and other properties about that quote 
 ***/
 
 let quotes = [
@@ -37,29 +38,24 @@ let quotes = [
   },
 ];
 
-
 /***
  * `getRandomQuote` function
+ * Param array is an input array of objects
+ * function accepts and returns a random index from the input array
 ***/
 function getRandomQuote (array) {
   let randomNumber = Math.floor(Math.random() * array.length); 
-  //console.log(array[randomNumber]);
   return array[randomNumber];
 }
 
-//getRandomQuote(quotes);
-
-
 /***
  * `printQuote` function
+ * Uses the getRandomQuote function select quote
+ * Function updates the HTML with the selected quote property values
 ***/
+
 function printQuote () {
   let randomQuote = getRandomQuote(quotes);
-  //console.log(randomQuote);
-  //console.log(randomQuote.quote);
-  //console.log(randomQuote.source);
-  //console.log(randomQuote.citation);
-  //console.log(randomQuote.year);
 
   let printedQuote = `
   <p class="quote">${randomQuote['quote']}</p>
@@ -76,13 +72,9 @@ function printQuote () {
 
   printedQuote += "</p>"
 
-  console.log(printedQuote);
   document.getElementById('quote-box').innerHTML = printedQuote;
 
 }
-
-//printQuote(quotes);
-
 
 /***
  * click event listener for the print quote button
