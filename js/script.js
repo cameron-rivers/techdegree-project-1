@@ -57,6 +57,11 @@ function getRandomQuote (array) {
 function printQuote () {
   let randomQuote = getRandomQuote(quotes);
 
+  console.log(randomQuote['quote']);
+  console.log(randomQuote['source']);
+  console.log(randomQuote['citation']);
+  console.log(randomQuote['year']);
+
   let printedQuote = `
   <p class="quote">${randomQuote['quote']}</p>
   <p class="source">${randomQuote['source']}
@@ -71,6 +76,8 @@ function printQuote () {
   }
 
   printedQuote += "</p>"
+  
+  console.log(printedQuote);
 
   document.getElementById('quote-box').innerHTML = printedQuote;
 
