@@ -85,8 +85,11 @@ function printQuote () {
   console.log(printedQuote);
 
   document.getElementById('quote-box').innerHTML = printedQuote;
-
+  
 }
+
+//method to call printQuote function and refresh quote every 10 seconds 
+setInterval(printQuote, 10000);
 
 /***
  * click event listener for the print quote button
