@@ -9,7 +9,7 @@ project 1 - A Random Quote Generator
 
 /*** 
  * `quotes` array 
- * each array item is an object containing individual quotes and other properties about that quote 
+ * each array item is an object containing individual quotes and properties related to the quote 
 ***/
 
 let quotes = [
@@ -41,18 +41,31 @@ let quotes = [
 
 /***
  * `getRandomQuote` function
- * Param array is an input array of objects
+ * param array is an array of objects
  * function accepts and returns a random index from the input array
 ***/
+
 function getRandomQuote (array) {
   let randomNumber = Math.floor(Math.random() * array.length); 
   return array[randomNumber];
 }
 
 /***
+ * `getRandomColor` function
+ * returns random hexadecimal value
+ * CREDIT: Chris Coyer (https://css-tricks.com/snippets/javascript/random-hex-color/)
+ */
+
+function getRandomColor () {
+  var randomColor = Math.floor(Math.random()*16777215).toString(16);
+  return '#' + randomColor;
+}
+
+/***
  * `printQuote` function
- * Uses the getRandomQuote function select quote
- * Function updates the HTML with the selected quote property values
+ * uses the getRandomQuote function to select quote
+ * updates the html with the selected quote property values
+ * uses the getRandomColor function to change the background color
 ***/
 
 function printQuote () {
@@ -85,10 +98,12 @@ function printQuote () {
   console.log(printedQuote);
 
   document.getElementById('quote-box').innerHTML = printedQuote;
-  
+
+  document.querySelector('body').style.backgroundColor = getRandomColor();
+
 }
 
-//method to call printQuote function and refresh quote every 10 seconds 
+//method to call printQuote function and refresh quote and color every 10 seconds 
 setInterval(printQuote, 10000);
 
 /***
@@ -97,5 +112,4 @@ setInterval(printQuote, 10000);
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
-
 
